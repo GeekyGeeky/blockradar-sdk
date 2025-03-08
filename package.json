@@ -1,0 +1,47 @@
+{
+  "name": "blockradar-sdk",
+  "version": "1.0.0",
+  "description": "BlockRadar Node.js SDK for Stablecoin Payments and Cross-border B2B Transactions",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "publish": "npm run build && npm publish",
+    "lint": "eslint . --ext .ts",
+    "prepare": "npm run build",
+    "example": "node -r dotenv/config -r ts-node/register example.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeekyGeeky/blockradar-sdk.git"
+  },
+  "keywords": [
+    "blockradar",
+    "stablecoins",
+    "web3",
+    "payments",
+    "crypto"
+  ],
+  "author": "Olushola O.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GeekyGeeky/blockradar-sdk/issues"
+  },
+  "homepage": "https://github.com/GeekyGeeky/blockradar-sdk#readme",
+  "dependencies": {
+    "axios": "^1.8.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "dotenv": "^16.4.7",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.6",
+    "typescript": "^5.8.2"
+  }
+}

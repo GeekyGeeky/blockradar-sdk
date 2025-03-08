@@ -1,0 +1,24 @@
+.env
+node_modules/
+# Ignore compiled TypeScript files
+examples/*.js
+
+# Build files
+dist/
+*.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
