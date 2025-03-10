@@ -1,12 +1,11 @@
 {
   "name": "blockradar-sdk",
-  "version": "1.0.0",
-  "description": "BlockRadar Node.js SDK for Stablecoin Payments and Cross-border B2B Transactions",
+  "version": "1.0.1",
+  "description": "BlockRadar Node.js SDK written in TypeScript",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "package.json",
+    "dist/**/*",
     "README.md"
   ],
   "scripts": {
