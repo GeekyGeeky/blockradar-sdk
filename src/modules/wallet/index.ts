@@ -28,7 +28,7 @@ export class WalletModule extends BaseService {
     return finalWalletId;
   }
 
-  async getWallet(walletId?: string) {
+  async retrieve(walletId?: string) {
     const id = this.getWalletId(walletId);
     return this.get(`/wallets/${id}`);
   }
