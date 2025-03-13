@@ -9,7 +9,7 @@ describe("Wallet Module", () => {
   //   });
 
   it("should get wallet", async () => {
-    const wallet = await sdk.wallet.getWallet(process.env.DEFAULT_WALLET_ID);
+    const wallet = await sdk.wallet.retrieve(process.env.DEFAULT_WALLET_ID);
     expect(wallet).toBeDefined();
   });
 });
