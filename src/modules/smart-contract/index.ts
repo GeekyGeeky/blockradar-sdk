@@ -6,7 +6,7 @@ import {
   SmartContractNetworkFeeResponse,
 } from "./interface";
 
-export class AutoSettlementModule extends BaseService {
+export class SmartContractModule extends BaseService {
   private defaultWalletId: string | undefined;
   constructor(apiKey: string, walletId?: string) {
     super(apiKey);
