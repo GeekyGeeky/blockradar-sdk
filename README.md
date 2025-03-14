@@ -4,9 +4,16 @@ A powerful SDK to interact with [Blockradar](https://docs.blockradar.co/api-refe
 
 ## 🌟 Features
 
-- **Wallet Management**: Create, manage, and interact with wallets.
-- **Asset Management**: Fetch balances, transactions, and more.
-- **Miscellaneous Module**: Additional blockchain utilities.
+- **Wallet Management**: Manage, and interact with wallets.
+- **Asset Management**: Retrieves the assets associated with a specific wallet, add assets to wallet and more.
+- **Address Operations**: Retrieve addresses associated with a specific wallet, withdrawal and more.
+- **Transactions Management**: Fetch transactions, initiate a sweep of assets and more.
+- **AML(Anti Money Laundering) Module**: Perform an anti-money laundering (AML) lookup for a given address and blockchain.
+- **Auto Settlements Module**: Add a beneficiary to a specific wallet, fetch beneficiaries, and more.
+- **Asset Recovery Module**: Calculates and returns the estimated network fee and more.
+- **Payment Links Module**: create a payment link, retrieve links, and more.
+- **Custom Smart Contracts**: Interacting with smart contracts on the blockchain.
+- **Miscellaneous Module**: Additional operations & utilities.
 - **Easy-to-Use API**: Designed for Node.js developers.
 - **Type Safety**: Fully typed methods for params & responses.
 
@@ -79,13 +86,12 @@ main();
 
 ## 📌 **Development Progress**
 
-| Features/Modules/Tasks             | Status         | Notes                                  |
+| Features & Tasks             | Status         | Notes                                  |
 | ---------------------------------- | -------------- | -------------------------------------- |
-| Wallet module                             | ✅ Done        | Supports creating and managing wallets |
-| Asset Module                            | ✅ Done        | Fetch balances and transactions        |
-| README Docs                        | 🔄 In Progress | Sending transactions coming soon       |
-| Tests                              | 🔄 In Progress | Sending transactions coming soon       |
-| Types & interfaces for all responses  | 🔄 In Progress     | Staking APIs under development         |
+| BlockRadar API implementation                             | ✅ Done        | Supports creating and managing wallets, address operations, payment links, etc |
+| README Docs                        | 🔄 In Progress | SDK usage docs       |
+| Tests                              | 🔄 In Progress | Tests for each module       |
+| Types & interfaces  | 🔄 In Progress     | Types & interfaces for all function params & responses         |
 | Github workflow for npm package CD | ❌ Not Done | Planned for future updates             |
 
 ---
