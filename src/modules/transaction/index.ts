@@ -2,7 +2,7 @@ import { BaseService } from "../../core/base.service";
 import { BlockRadarError } from "../../core/error";
 import { GetTransactionsParams } from "./interface";
 
-export class AddressModule extends BaseService {
+export class TransactionModule extends BaseService {
   private defaultWalletId: string | undefined;
 
   constructor(apiKey: string, walletId?: string) {
