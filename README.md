@@ -1,5 +1,10 @@
 # Blockradar Node.js SDK 🚀
 
+[![GitHub stars](https://img.shields.io/github/stars/GeekyGeeky/blockradar-sdk?style=social&color=blue)](https://github.com/GeekyGeeky/blockradar-sdk)
+[![npm total downloads](https://img.shields.io/npm/dt/blockradar-sdk?color=blue)](https://www.npmjs.com/package/blockradar-sdk)
+[![npm version](https://img.shields.io/npm/v/blockradar-sdk?color=blue)](https://www.npmjs.com/package/blockradar-sdk)
+[![License](https://img.shields.io/npm/l/blockradar-sdk?color=blue)](LICENSE)
+
 A powerful SDK to interact with [Blockradar](https://docs.blockradar.co/api-reference/introduction) APIs seamlessly.
 
 ## 🌟 Features
