@@ -1,10 +1,10 @@
 import { BaseService } from "../../core/base.service";
 import { BlockRadarError } from "../../core/error";
-import { BaseResponse } from "../../core/interface";
 import {
+  BaseResponse,
   SmartContractParams,
   SmartContractNetworkFeeResponse,
-} from "./interface";
+} from "../../core/interface";
 
 export class SmartContractModule extends BaseService {
   private defaultWalletId: string | undefined;
