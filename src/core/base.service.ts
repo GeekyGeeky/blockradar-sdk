@@ -1,4 +1,6 @@
+import FormData from "form-data";
 import AxiosClient from "./blockradar.client";
+import fs from "fs";
 
 export abstract class BaseService {
   protected client;
@@ -24,6 +26,38 @@ export abstract class BaseService {
 
   protected async delete(url: string) {
     const response = await this.client.delete(url);
+    return response.data;
+  }
+
+  /**
+   * Uploads data using multipart/form-data.
+   * @param url - The API endpoint.
+   * @param filePath - Path to the file.
+   * @param additionalData - Additional form fields.
+   * @returns API response data.
+   */
+  async postWithFile(
+    url: string,
+    filePath?: string,
+    additionalData: Record<string, string> = {}
+  ): Promise<any> {
+    const formData = new FormData();
+
+    if (filePath) {
+      formData.append("file", fs.createReadStream(filePath)); // Attach file
+    }
+
+    // Append additional form fields
+    Object.entries(additionalData).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
+
+    const response = await this.client.post(url, formData, {
+      headers: {
+        ...formData.getHeaders(),
+      },
+    });
+
     return response.data;
   }
 }
