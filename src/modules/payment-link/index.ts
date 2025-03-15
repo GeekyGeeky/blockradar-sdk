@@ -1,16 +1,32 @@
 import { BaseService } from "../../core/base.service";
-// import { LookupParams } from "./interface";
+import {
+  CreatePaymentLinkParams,
+  UpdatePaymentLinkParams,
+  PaymentLinkResponse,
+  ListPaymentLinksResponse,
+} from "./interface";
 
 export class PaymentLinkModule extends BaseService {
   constructor(apiKey: string) {
     super(apiKey);
   }
 
-  async list() {
-    return this.get('/payment_links');
+  async create(data: CreatePaymentLinkParams): Promise<PaymentLinkResponse> {
+    return this.post("/payment_links", data);
   }
 
-  async retrieve(id: string) {
+  async list(): Promise<ListPaymentLinksResponse> {
+    return this.get("/payment_links");
+  }
+
+  async retrieve(id: string): Promise<PaymentLinkResponse> {
     return this.get(`/payment_links/${id}`);
+  }
+
+  async update({
+    id,
+    ...data
+  }: UpdatePaymentLinkParams): Promise<PaymentLinkResponse> {
+    return this.patch(`/payment_links/${id}`, data);
   }
 }
