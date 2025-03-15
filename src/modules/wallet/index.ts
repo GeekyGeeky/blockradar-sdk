@@ -1,5 +1,6 @@
 import { BaseService } from "../../core/base.service";
 import { BlockRadarError } from "../../core/error";
+import { BalanceResponse, BalancesResponse } from "../../core/interface";
 import {
   DepositFinder,
   GetBalanceParams,
@@ -48,7 +49,10 @@ export class WalletModule extends BaseService {
     return this.post(`/wallets/${id}/withdraw/network-fee`, params);
   }
 
-  async getBalance({ walletId, assetId }: GetBalanceParams) {
+  async getBalance({
+    walletId,
+    assetId,
+  }: GetBalanceParams): Promise<BalanceResponse> {
     try {
       const id = this.getWalletId(walletId);
       const query = assetId ? `?assetId=${assetId}` : "";
@@ -58,7 +62,9 @@ export class WalletModule extends BaseService {
     }
   }
 
-  async getBalances({ walletId }: GetBalanceParams & { address?: string }) {
+  async getBalances({
+    walletId,
+  }: GetBalanceParams & { address?: string }): Promise<BalancesResponse> {
     const id = this.getWalletId(walletId);
     return this.get(`/wallets/${id}/balances`);
   }

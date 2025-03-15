@@ -1,6 +1,8 @@
 import { BaseService } from "../../core/base.service";
 import { BlockRadarError } from "../../core/error";
 import {
+  BalanceResponse,
+  BalancesResponse,
   BaseResponse,
   SmartContractNetworkFeeResponse,
 } from "../../core/interface";
@@ -67,7 +69,7 @@ export class AddressModule extends BaseService {
     walletId,
     addressId,
     assetId,
-  }: GetAddrBalance & { assetId?: string }) {
+  }: GetAddrBalance): Promise<BalanceResponse> {
     try {
       const id = this.getWalletId(walletId);
       const query = assetId ? `?assetId=${assetId}` : "";
@@ -77,7 +79,10 @@ export class AddressModule extends BaseService {
     }
   }
 
-  async getBalances({ walletId, addressId }: GetAddrBalance) {
+  async getBalances({
+    walletId,
+    addressId,
+  }: GetAddrBalance): Promise<BalancesResponse> {
     try {
       const id = this.getWalletId(walletId);
       return this.get(`/wallets/${id}/addresses/${addressId}/balances`);
