@@ -1,6 +1,10 @@
 import { BaseService } from "../../core/base.service";
 import { BlockRadarError } from "../../core/error";
 import {
+  BaseResponse,
+  SmartContractNetworkFeeResponse,
+} from "../../core/interface";
+import {
   GenerateAddressParams,
   AddressParams,
   UpdateAddressParams,
@@ -8,6 +12,7 @@ import {
   GetAddrBalance,
   GetAddrTransactions,
   WithdrawalParams,
+  AddrSmartContractParams,
 } from "./interface";
 
 export class AddressModule extends BaseService {
@@ -119,5 +124,41 @@ export class AddressModule extends BaseService {
   async withdraw({ walletId, addressId, ...params }: WithdrawalParams) {
     const id = this.getWalletId(walletId);
     return this.post(`/wallets/${id}/addresses/${addressId}/withdraw`, params);
+  }
+
+  async smartContractNetworkFee({
+    walletId,
+    addressId,
+    ...params
+  }: AddrSmartContractParams): Promise<SmartContractNetworkFeeResponse> {
+    const id = this.getWalletId(walletId);
+    return this.post(
+      `/wallets/${id}/addresses/${addressId}/contracts/network-fee`,
+      params
+    );
+  }
+
+  async smartContractRead({
+    walletId,
+    addressId,
+    ...params
+  }: AddrSmartContractParams): Promise<BaseResponse & { data: string }> {
+    const id = this.getWalletId(walletId);
+    return this.post(
+      `/wallets/${id}/addresses/${addressId}/contracts/read`,
+      params
+    );
+  }
+
+  async smartContractWrite({
+    walletId,
+    addressId,
+    ...params
+  }: AddrSmartContractParams): Promise<BaseResponse & { data: any }> {
+    const id = this.getWalletId(walletId);
+    return this.post(
+      `/wallets/${id}/addresses/${addressId}/contracts/write`,
+      params
+    );
   }
 }
