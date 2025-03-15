@@ -1,3 +1,5 @@
+import { SmartContractParams } from "../../core/interface";
+
 export interface GenerateAddressParams {
   walletId?: string;
   name?: string; // Optional - The name of the address
@@ -50,3 +52,6 @@ export interface WithdrawalParams {
   metadata?: string; // Optional - Additional metadata for the withdrawal
 }
 
+export interface AddrSmartContractParams extends SmartContractParams {
+  addressId: string;
+}
