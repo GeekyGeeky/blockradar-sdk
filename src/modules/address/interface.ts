@@ -29,6 +29,7 @@ export interface WhitelistAddressParams {
 export interface GetAddrBalance {
   walletId?: string;
   addressId: string;
+  assetId: string;
 }
 
 export interface GetAddrTransactions {

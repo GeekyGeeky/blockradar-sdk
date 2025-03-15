@@ -28,7 +28,7 @@ export interface WithdrawalNetworkFee {
 
 export interface GetBalanceParams {
   walletId?: string;
-  assetId?: string;
+  assetId: string;
 }
 
 export interface DepositFinder {
